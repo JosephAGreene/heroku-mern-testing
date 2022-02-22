@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import TestService from "./services/api.js";
+import TestService from "./services/TestService.js";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,7 +14,6 @@ function App() {
     } else {
       console.log(res);
     }
-    console.log(words);
   }
 
   const handleWordChange = (event) => {
@@ -23,7 +22,7 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const res = await TestService.addNewWord({word: newWord});
+    const res = await TestService.addNewWord({ word: newWord });
     if (res.status === 200) {
       console.log(`New Data Added: ${res.data.word}`);
     } else {
@@ -46,14 +45,21 @@ function App() {
           <form onSubmit={handleSubmit}>
             <label>
               Word:
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={newWord}
-                onChange={handleWordChange}  
+                onChange={handleWordChange}
               />
             </label>
             <input type="submit" value="Submit" />
           </form>
+        </p>
+        <p>
+          <ul>
+            {words.map((word, index) => {
+              return <li key={index}>{word}</li>
+            })}
+          </ul>
         </p>
       </header>
     </div>
