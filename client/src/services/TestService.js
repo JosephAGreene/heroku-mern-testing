@@ -1,4 +1,5 @@
 import axios from "axios";
+import API from "./apiVariable.js";
 
 class TestService {
 
@@ -9,7 +10,7 @@ class TestService {
 
   addNewWord(payload) {
     return axios
-      .post(`/api/test`,
+      .post(`${API}/test`,
         {
           ...payload
         }
@@ -28,7 +29,7 @@ class TestService {
 
   getWords() {
     return axios
-      .get(`/api/test`)
+      .get(`${API}/test`)
       .then(response => {
         return response;
       })
