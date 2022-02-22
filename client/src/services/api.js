@@ -10,7 +10,7 @@ class TestService {
 
   addNewWord(payload) {
     return axios
-      .post(`http://localhost:5000/api/test`,
+      .post(`/api/test`,
         {
           ...payload
         }
@@ -29,7 +29,7 @@ class TestService {
 
   getWords() {
     return axios
-      .get(`http://localhost:5000/api/test`)
+      .get(`/api/test`)
       .then(response => {
         return response;
       })
