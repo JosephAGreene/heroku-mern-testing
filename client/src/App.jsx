@@ -41,26 +41,22 @@ function App() {
         <p>
           <button type="button" onClick={getWords}>Get Words</button>
         </p>
-        <p>
-          <form onSubmit={handleSubmit}>
-            <label>
-              Word:
-              <input
-                type="text"
-                value={newWord}
-                onChange={handleWordChange}
-              />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
-        </p>
-        <p>
-          <ul>
-            {words.map((element, index) => {
-              return <li key={`${index}-${element.word}`}>{element.word}</li>
-            })}
-          </ul>
-        </p>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Word:
+            <input
+              type="text"
+              value={newWord}
+              onChange={handleWordChange}
+            />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        <ul>
+          {words.map((element, index) => {
+            return <li key={`${index}-${element.word}`}>{element.word}</li>
+          })}
+        </ul>
       </header>
     </div>
   )
