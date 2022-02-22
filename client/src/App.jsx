@@ -56,8 +56,8 @@ function App() {
         </p>
         <p>
           <ul>
-            {words.map((word, index) => {
-              return <li key={index}>{word}</li>
+            {words.map((element, index) => {
+              return <li key={`${index}-${element.word}`}>{element.word}</li>
             })}
           </ul>
         </p>
