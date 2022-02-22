@@ -7,7 +7,6 @@ class TestService {
     this.networkIssue = { status: 'dead' };
   }
 
-
   addNewWord(payload) {
     return axios
       .post(`/api/test`,
