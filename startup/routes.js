@@ -1,7 +1,7 @@
 const express = require('express');
-const test = require('../routes/test');
+const tests = require('../routes/tests');
 
 module.exports = function(app) {
   app.use(express.json());
-  app.use('/api/test',  test);
+  app.use('/api/test',  tests);
 }
